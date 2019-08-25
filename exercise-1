@@ -1,0 +1,9 @@
+Map and FlatMap difference:
+scala> sc.parallelize(List(1,2,3)).flatMap(x=>List(x,x,x)).collect
+res200: Array[Int] = Array(1, 1, 1, 2, 2, 2, 3, 3, 3)
+
+scala> sc.parallelize(List(1,2,3)).map(x=>List(x,x,x)).collect
+res201: Array[List[Int]] = Array(List(1, 1, 1), List(2, 2, 2), List(3, 3, 3))
+
+
+mapPartitions(func)
